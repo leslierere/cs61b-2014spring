@@ -1,0 +1,7 @@
+1. set中需要使用其它种List来实现set功能时field中static type需使用母类List，这样开发时个人就可对自己想选的list只需更改implementation。比如初始化时，dynamic type使用DList就好，因为DML，还是会invoke子类中的overriden方法，即不会影响方法调用
+2. Integer是object，用<>比较大小没问题，但如果用==，即使两个代表的数字相等，最后还是会算作false
+3. compareTo使用仍然糊涂
+https://www.1point3acres.com/bbs/thread-99849-6-1.html
+"Comparable是个接口，which extends Object，所以Object可以cast到Comparable，从而Object类型的item之间可以比较大小。
+题目中main()给的是整数来测试，当然还可以用其他一些类型，因为java自己在这些常用类里面都有compareTo()的implementation。
+如果是你自己的类(比如 MyClass item)，就需要你自己implements Comparable了，否则java按它的机制给的compareTo()不一定makes sense to you."
